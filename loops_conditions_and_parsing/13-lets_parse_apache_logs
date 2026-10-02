@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script parses the local apache-access.log file using awk.
+# This script parses an Apache log file and displays the IP and status code.
 
-awk '{print $1, $9}' apache-access.log
+awk '{print $1, $9}' "${1:-apache-access.log}"
 
