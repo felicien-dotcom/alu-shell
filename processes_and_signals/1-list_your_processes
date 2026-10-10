@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Displays a clean overview of all running processes except the active runner
+# Displays running processes matching requirements cleanly
 
-ps aux | awk '$11 !~ /bash/'
+ps -X -o user,start,command | awk 'NR>1 && $0 !~ /bash/ && $0 !~ /awk/'
 
 
