@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Displays running processes excluding the active bash runner
+# Displays a clean overview of all running processes except the active runner
 
-ps auxf | grep -v "bash"
+ps aux | awk '$11 !~ /bash/'
+
 
