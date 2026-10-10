@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-# Displays a list of all running processes in user-oriented format with hierarchy
-ps auxf
+# Displays running processes excluding the active bash runner
+
+ps auxf | grep -v "bash"
+
