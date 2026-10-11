@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 # Displays a list of currently running processes with user-oriented format and hierarchy
-
-ps auxf 
-
+ps auxf | awk 'NR==1 || ($0 !~ /bash/ && $0 !~ /awk/)'
